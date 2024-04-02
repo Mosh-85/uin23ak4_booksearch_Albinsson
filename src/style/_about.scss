@@ -1,0 +1,16 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+    img{
+        width: 49%;
+        height: 50%;}
+    
+    p{
+        width: 49%;
+        color: black;
+    }
+}
