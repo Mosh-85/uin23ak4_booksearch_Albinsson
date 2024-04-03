@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 
-export default function Search({ onSearchResults }) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+export default function Search({
+  onSearchResults,
+  searchResults,
+  setSearchResults,
+  setSearchParam,
+}) {
+  const [search, setSearch] = useState("James Bond");
 
   useEffect(() => {
     const fetchData = async () => {
-      if (searchTerm.trim() !== "") {
+      if (search.trim() !== "" && search.length >= 3) {
         try {
           const response = await fetch(
             `https://openlibrary.org/search.json?title=${encodeURIComponent(
-              searchTerm
+              search
             )}`
           );
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
+
           const data = await response.json();
           setSearchResults(data.docs);
         } catch (error) {
@@ -27,20 +29,19 @@ export default function Search({ onSearchResults }) {
     };
 
     fetchData();
-  }, [searchTerm]);
+  }, [search]);
 
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+    setSearchParam(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Trigger search when form is submitted
-    setSearchTerm(event.target.search.value);
+    setSearch(search);
   };
 
   useEffect(() => {
-    // Pass searchResults to the parent component if onSearchResults is a function
     if (typeof onSearchResults === "function") {
       onSearchResults(searchResults);
     }
@@ -49,16 +50,15 @@ export default function Search({ onSearchResults }) {
   return (
     <div className="search">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="search">Search for books:</label>
+        <label htmlFor="search">Book search: </label>
         <input
           type="text"
           id="search"
-          name="search"
-          placeholder="Enter book title"
-          value={searchTerm}
-          onChange={handleInputChange}
+          placeholder="Search here..."
+          value={search}
+          onChange={handleChange}
         />
-        <button type="submit">Search</button>
+        <input className="button" type="submit" value={"Search"} />
       </form>
     </div>
   );

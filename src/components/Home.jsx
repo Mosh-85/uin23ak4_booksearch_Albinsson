@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Searchresult from "./Searchresult";
 
-export default function Home() {
-  const [searchResults, setSearchResults] = useState([]);
-
+export default function Home({ searchResults }) {
   return (
     <>
-      <article className="home">
+      <main className="home">
         <h1>Book Search</h1>
         <Searchresult searchResults={searchResults} />
-      </article>
+      </main>
     </>
   );
 }

@@ -1,17 +1,23 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./components/About";
-import Searchresult from "./components/Searchresult";
 import Home from "./components/Home";
 
 function App() {
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchParam, setSearchParam] = useSearchParams([]);
+
   return (
     <>
-      <Header />
+      <Header
+        setSearchResults={setSearchResults}
+        setSearchParam={setSearchParam}
+      />
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home searchResults={searchResults} />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

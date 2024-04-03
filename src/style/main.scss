@@ -1,4 +1,44 @@
 @import "header";
 @import "search";
+@import "article";
 @import "about";
 @import "footer";
+
+:root{
+    min-width: 360px;
+    max-width: 1000px;
+    
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+@media only screen and (min-width: 900px) {
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+  
+      h1 {
+        grid-column: span 3;
+      }
+  
+      .article {
+        flex-shrink: calc(100% / 3);
+        height: 140px;
+        width: calc(250% / 3);
+      }
+    .article:hover {
+        transform: scale(1.1);
+        transition: transform 0.5s;
+    
+    }
+  }}

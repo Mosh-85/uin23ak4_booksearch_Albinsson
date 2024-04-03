@@ -1,22 +1,25 @@
 .search{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     height: 50px;
     background-color: #f1f1f1;
+    font-size: .7rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
     input{
+        font-size: .7rem;
         padding: 0.5rem;
         border: 1px solid #333;
         border-radius: 5px;
         margin-right: 1rem;
     }
-    button{
-        padding: 0.5rem 1rem;
+    .button{
+        padding: 0.5rem .9rem;
         border: none;
         border-radius: 5px;
-        background-color: #333;
-        color: #fff;
+        background-color: #827f7f;
+        color: #f8f8f8;
         cursor: pointer;
     }
 }

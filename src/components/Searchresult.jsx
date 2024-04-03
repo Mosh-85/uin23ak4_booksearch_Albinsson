@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import Article from "./Bookcard";
 
 export default function Searchresult({ searchResults }) {
-  console.log(searchResults);
+  {
+    searchResults.map((result, index) => <li key={index}>{result.title}</li>);
+  }
+
   return (
-    <div>
+    <section>
       <h1>Search results...</h1>
-      <ul>
-        {searchResults.map((result, index) => (
-          <li key={index}>{result.title}</li>
-        ))}
-      </ul>
-    </div>
+      {searchResults.slice(0, 25).map((book, index) => (
+        <Article key={index} book={book} />
+      ))}
+    </section>
   );
 }
