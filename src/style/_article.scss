@@ -1,4 +1,34 @@
+.linkButton{
+  background-color: #c5ad11;
+  border: 2px solid #000000;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 8px 4px;
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover{
+    background-color: #2ebb29;
+    color: white;
+  }}
 
+.load{
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #c5ad11; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 section {
     display: flex;
@@ -19,7 +49,8 @@ section {
     width: 310px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     h2{
-        font-size: .8rem;
+        font-size: 1rem;
+        font-weight: bold;
         margin: 2rem 0 1rem 0;
         padding: 0;
     }
@@ -27,17 +58,19 @@ section {
         display: flex;
         align-self: flex-start;
         justify-content: left;
-        font-size: .7rem;
+        font-size: .8rem;
         margin: 0;
         padding: 0;
     }
     a{
         display: flex;
         align-self: flex-end;
-        color: black;
-        font-size: .7rem;
-        margin: 0;
-        padding: 0;}
+    }
+    
+
+
+
+    
 }
 
 

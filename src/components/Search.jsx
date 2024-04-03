@@ -5,11 +5,14 @@ export default function Search({
   searchResults,
   setSearchResults,
   setSearchParam,
+  setIsLoading,
 }) {
   const [search, setSearch] = useState("James Bond");
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       if (search.trim() !== "" && search.length >= 3) {
         try {
           const response = await fetch(
@@ -26,6 +29,7 @@ export default function Search({
       } else {
         setSearchResults([]);
       }
+      setIsLoading(false);
     };
 
     fetchData();

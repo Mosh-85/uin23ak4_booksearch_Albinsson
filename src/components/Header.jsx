@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 
-export default function Header({ setSearchResults, setSearchParam }) {
+export default function Header({
+  setSearchResults,
+  setSearchParam,
+  setIsLoading,
+}) {
   return (
     <header>
       <nav className="nav">
@@ -18,6 +22,7 @@ export default function Header({ setSearchResults, setSearchParam }) {
       <Search
         setSearchResults={setSearchResults}
         setSearchParam={setSearchParam}
+        setIsLoading={setIsLoading}
       />
     </header>
   );
