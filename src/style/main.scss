@@ -4,6 +4,11 @@
 @import "about";
 @import "footer";
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
 
 
 
@@ -14,8 +19,6 @@
 
 @media only screen and (min-width: 1000px) {
   body {
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0;
     padding: 0;

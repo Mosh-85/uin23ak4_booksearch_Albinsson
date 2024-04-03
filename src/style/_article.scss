@@ -1,3 +1,5 @@
+
+
 section {
     display: flex;
     flex-direction: column;
@@ -5,8 +7,9 @@ section {
     gap: 1rem;
 }
 
-.article
-{
+.article{
+    background-image: url(/src/assets/img/book_bg.svg);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,17 +55,16 @@ section {
         h1{
           grid-column: span 3;
           display: flex;
-          justify-items: center;
           align-items: center;
         }
     
         .article {
           height: 140px;
-          width: calc(250% / 3);
+          width: calc(280% / 3);
         }
       .article:hover {
-          transform: scale(1.1);
-          transition: transform 0.5s;
+          transform: scale(1.075);
+          transition: transform 0.8s;
       
       }
 }}
