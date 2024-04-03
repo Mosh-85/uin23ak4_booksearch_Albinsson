@@ -17,7 +17,7 @@ export default function Article({ book, setMoreInfo }) {
 
       <ul className="cardli">
         <Link
-          to={`/book/${book?.title.replace(/\s+/g, "-")}`}
+          to={`/book/${book?.title.replace(/\s+/g, "-").toLowerCase()}`}
           className="linkButton"
           onClick={() => handleClick(book)}
         >

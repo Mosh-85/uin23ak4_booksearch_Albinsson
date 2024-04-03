@@ -1,14 +1,17 @@
 import React from "react";
 
 export default function BookDetails({ moreInfo }) {
+  console.log(moreInfo);
   return (
     <>
       <article>
         <h2>{moreInfo?.title || "No title available"}</h2>
         <ul>
-          <li>First Published: {moreInfo?.first_publish_year || "Unknown"}</li>
-          <li>Author: {moreInfo?.author_name?.join(", ") || "Unknown"}</li>
-          <li>Avg.rating: {moreInfo?.ratings_average || "N/A"}</li>
+          {Object.entries(moreInfo || {}).map(([key, value], index) => (
+            <li key={index}>
+              {key}: {Array.isArray(value) ? value.join(", ") : value}
+            </li>
+          ))}
         </ul>
         <img
           className="cardimg"
