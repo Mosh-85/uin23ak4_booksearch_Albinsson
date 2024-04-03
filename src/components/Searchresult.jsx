@@ -9,7 +9,7 @@ export default function Searchresult({ searchResults }) {
   return (
     <section>
       <h1>Search results...</h1>
-      {searchResults.slice(0, 25).map((book, index) => (
+      {searchResults.slice(0, 50).map((book, index) => (
         <Article key={index} book={book} />
       ))}
     </section>
