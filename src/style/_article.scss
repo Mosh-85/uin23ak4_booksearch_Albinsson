@@ -42,7 +42,7 @@ section {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     margin: 0;
     padding: 1rem 1rem;
@@ -51,7 +51,6 @@ section {
     h2{
         font-size: 1rem;
         font-weight: bold;
-        margin: 2rem 0 1rem 0;
         padding: 0;
     }
     p{
@@ -66,11 +65,25 @@ section {
         display: flex;
         align-self: flex-end;
     }
-    
+    .cardul{
+      background-color: #f3f3f3a8;
+      
+    }
+    .cardimg{
+      margin-left: auto;
+    }
 
 
+    .cardli{
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-top: auto;
 
-    
+    }
+ 
 }
 
 
@@ -90,11 +103,13 @@ section {
           display: flex;
           align-items: center;
         }
+        
     
         .article {
-          height: 140px;
-          width: calc(280% / 3);
+          height: 500px;
+          width: calc(260% / 3);
         }
+                 
       .article:hover {
           transform: scale(1.075);
           transition: transform 0.8s;

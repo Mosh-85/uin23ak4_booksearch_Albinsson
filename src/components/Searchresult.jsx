@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Article from "./Bookcard";
 
-export default function Searchresult({ searchResults, isLoading }) {
-  {
-    searchResults.map((result, index) => <li key={index}>{result.title}</li>);
-  }
+export default function Searchresult({
+  searchResults,
+  isLoading,
+  setMoreInfo,
+}) {
+  const [page, setPage] = useState(1);
 
-  console.log(isLoading);
+  const handleShowMore = () => {
+    setPage(page + 1);
+  };
 
   return (
     <section>
       <h1>Search results...</h1>
       {isLoading && <p className="load"></p>}
-      {searchResults.slice(0, 50).map((book, index) => (
-        <Article key={index} book={book} />
+      {searchResults.slice(0, 24 * page).map((book, index) => (
+        <Article key={index} book={book} setMoreInfo={setMoreInfo} />
       ))}
+      {searchResults.length > 24 * page && (
+        <button className="showmore" onClick={handleShowMore}>
+          Show More
+        </button>
+      )}
     </section>
   );
 }
