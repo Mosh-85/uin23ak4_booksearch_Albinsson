@@ -14,7 +14,7 @@ export default function Searchresult({
 
   return (
     <section>
-      <h1>Search results...</h1>
+      <h3>Search results...</h3>
       {isLoading && <p className="load"></p>}
       {searchResults.slice(0, 24 * page).map((book, index) => (
         <Article key={index} book={book} setMoreInfo={setMoreInfo} />

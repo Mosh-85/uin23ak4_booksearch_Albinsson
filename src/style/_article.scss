@@ -35,6 +35,15 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    h3{
+      grid-column: span 3;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 0;
+    }
 }
 
 .article{
