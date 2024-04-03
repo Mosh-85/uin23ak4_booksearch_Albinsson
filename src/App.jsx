@@ -13,7 +13,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [moreInfo, setMoreInfo] = useState([]);
 
-  console.log("test", moreInfo);
   return (
     <>
       <Header

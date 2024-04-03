@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Article({ book, setMoreInfo }) {
-  function handleClick() {
-    setMoreInfo(book.id);
+  function handleClick(clickedBook) {
+    setMoreInfo(clickedBook);
   }
 
   return (
@@ -14,16 +14,12 @@ export default function Article({ book, setMoreInfo }) {
         <li>Author: {book?.author_name?.join(", ") || "Unknown"}</li>
         <li>Avg.rating: {book?.ratings_average || "N/A"}</li>
       </ul>
-      <img
-        className="cardimg"
-        src={`https://covers.openlibrary.org/b/isbn/${book?.isbn?.[0]}-M.jpg`}
-        alt={book?.title + ", Cover art"}
-      />
+
       <ul className="cardli">
         <Link
-          to={`/book/${book?.id}`}
+          to={`/book/${book?.title.replace(/\s+/g, "-")}`}
           className="linkButton"
-          onClick={() => handleClick(book?.id)}
+          onClick={() => handleClick(book)}
         >
           Details
         </Link>
