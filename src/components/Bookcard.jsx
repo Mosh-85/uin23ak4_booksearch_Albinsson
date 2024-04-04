@@ -26,6 +26,7 @@ export default function Article({ book, setMoreInfo }) {
         <a
           className="linkButton"
           href={`https://www.amazon.com/s?k=${book?.isbn?.[0] || ""}`}
+          target="_blank"
         >
           Amazon
         </a>
