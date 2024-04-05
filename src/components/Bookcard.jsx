@@ -25,7 +25,9 @@ export default function Article({ book, setMoreInfo }) {
         </Link>
         <a
           className="linkButton"
-          href={`https://www.amazon.com/s?k=${book?.isbn?.[0] || ""}`}
+          href={`https://www.amazon.com/s?k=${
+            book?.isbn?.[0] || ""
+          }`} /* Siden ikke alle bøker har id_amazon, så bruker jeg isbn for å søke på amazon */
           target="_blank"
         >
           Amazon

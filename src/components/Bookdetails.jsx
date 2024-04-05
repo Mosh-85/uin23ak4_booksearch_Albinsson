@@ -22,3 +22,5 @@ export default function BookDetails({ moreInfo }) {
     </>
   );
 }
+
+/* Har ikke laget noen css for denne siden, men skriver ut det som er i moreInfo-objektet. */
